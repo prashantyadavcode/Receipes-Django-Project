@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block start %}
+
+    <h1> asd </h1>
+
+    <a href="/contact">Contact</a>
+    <a href="/about">About</a>
+    
+    <table class="container">
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      {% for peoples in  people%}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{peoples.name}}</td>
+        <td>{{peoples.age}}</td>
+        <td>
+          {% if peoples.age > 18 %}
+          👍
+          {% else %}
+          👎
+          {% endif %}
+          
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+{% endblock %}
